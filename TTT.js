@@ -3,13 +3,12 @@ let gameActive = true;
 var array = [null, null, null, null, null, null, null, null, null];
 
 function handleClick(element){
-    if(!gameActive || array[element.id] == null){
+    if(gameActive && array[element.id] == null){
     document.getElementById(element.id).innerText = currentPlayer;
     array[element.id] = currentPlayer;
     checkWinner();
     if(gameActive)
         {currentPlayer = currentPlayer === "X" ? "0" : "X";}
-    console.log(array);
     }else{return}
 }
 
