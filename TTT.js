@@ -7,12 +7,23 @@ function handleClick(element){
     document.getElementById(element.id).innerText = currentPlayer;
     array[element.id] = currentPlayer;
     checkWinner();
-    if(gameActive)
-        {currentPlayer = currentPlayer === "X" ? "0" : "X";}
+    if(gameActive){
+        currentPlayer = currentPlayer === "X" ? "0" : "X";
+    }else{
+        document.getElementById("0").className = "hoverDisabled";
+        document.getElementById("1").className = "hoverDisabled";
+        document.getElementById("2").className = "hoverDisabled";
+        document.getElementById("3").className = "hoverDisabled";
+        document.getElementById("4").className = "hoverDisabled";
+        document.getElementById("5").className = "hoverDisabled";
+        document.getElementById("6").className = "hoverDisabled";
+        document.getElementById("7").className = "hoverDisabled";
+        document.getElementById("8").className = "hoverDisabled";
+    }
     }else{return}
 }
 
-function checkWinner(){
+function checkWinner(element){
     let result = document.getElementById("result");
     if( array[0]==array[1] && array[1]==array[2] && array[0]!=null ||
         array[3]==array[4] && array[4]==array[5] && array[3]!=null ||
