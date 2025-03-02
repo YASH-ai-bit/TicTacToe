@@ -42,6 +42,7 @@ function resetGame(){
         array[i] = null;
         document.getElementById(i).innerText = "";
     }
+    result.innerText = "";
     gameActive = true;
     currentPlayer = "X";
 }
