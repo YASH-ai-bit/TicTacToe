@@ -1,5 +1,16 @@
 let currentPlayer = "X";
 let gameActive = true;
+function hoverDisabled(){
+    if(!gameActive){
+        for(let i=0; i<array.length; i++){
+            document.getElementById(i).className = "hoverDisabled";
+        }
+    }else{
+        for(let i=0; i<array.length; i++){
+            document.getElementById(i).className = "column";
+        }
+    }
+}
 var array = [null, null, null, null, null, null, null, null, null];
 
 function handleClick(element){
@@ -10,15 +21,7 @@ function handleClick(element){
     if(gameActive){
         currentPlayer = currentPlayer === "X" ? "0" : "X";
     }else{
-        document.getElementById("0").className = "hoverDisabled";
-        document.getElementById("1").className = "hoverDisabled";
-        document.getElementById("2").className = "hoverDisabled";
-        document.getElementById("3").className = "hoverDisabled";
-        document.getElementById("4").className = "hoverDisabled";
-        document.getElementById("5").className = "hoverDisabled";
-        document.getElementById("6").className = "hoverDisabled";
-        document.getElementById("7").className = "hoverDisabled";
-        document.getElementById("8").className = "hoverDisabled";
+        hoverDisabled();
     }
     }else{return}
 }
@@ -36,6 +39,7 @@ function checkWinner(element){
     ){
         result.innerText = "Player " + currentPlayer + " wins !!";
         gameActive = false;
+        
     }
     else{
         for(let i=0; i<array.length; i++){
@@ -45,6 +49,7 @@ function checkWinner(element){
         }
         result.innerText = "It's a draw!!";
         gameActive = false;
+        
     }
 }
 
@@ -56,4 +61,5 @@ function resetGame(){
     result.innerText = "";
     gameActive = true;
     currentPlayer = "X";
+    hoverDisabled();
 }
