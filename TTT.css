@@ -6,7 +6,7 @@
 
 body {
     background-color: #E0DDCF;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 nav {
@@ -45,6 +45,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .column {
@@ -52,12 +53,21 @@ nav {
     justify-content: center;
     align-items: center;
     border: 2px solid black; 
-    font-size: 36px;
+    border-radius:2px;
+    font-size: 56px;
     height: 15vh;
     width: 15vh;
     cursor: pointer; 
 }
 
+.column:hover {
+    background-color: #7d7a7d; 
+    transition: 0.1s;
+    transform : scale(1.05);
+    color : #F1F0EA;
+    border-radius : 5px;
+    border-width: 3px;
+}
 .reset {
     display: block;
     margin: 20px auto; 

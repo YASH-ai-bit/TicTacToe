@@ -23,7 +23,7 @@ function checkWinner(){
         array[0]==array[4] && array[4]==array[8] && array[0]!=null ||
         array[2]==array[4] && array[4]==array[6] && array[2]!=null
     ){
-        result.innerText = "Player " + currentPlayer + " wins";
+        result.innerText = "Player " + currentPlayer + " wins !!";
         gameActive = false;
     }
     else{
